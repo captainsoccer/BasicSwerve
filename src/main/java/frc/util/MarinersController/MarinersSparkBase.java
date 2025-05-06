@@ -513,6 +513,7 @@ public class MarinersSparkBase extends MarinersController {
             default -> SparkBase.ControlType.kDutyCycle;
         };
 
+        // REVLibError error = motor.getClosedLoopController().setReference(output, controlType, 0, feedForward);
         REVLibError error = motor.getClosedLoopController().setReference(output, controlType, ClosedLoopSlot.kSlot0, feedForward);
         
         reportError("Error setting motor output", error);
